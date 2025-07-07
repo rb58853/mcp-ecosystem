@@ -5,7 +5,7 @@
 [![Stars](https://img.shields.io/github/stars/rb58853/python-mcp?style=flat&logo=github)](https://github.com/rb58853/python-mcp/stargazers)
 [![Watchers](https://img.shields.io/github/watchers/rb58853/python-mcp?style=flat&logo=github)](https://github.com/rb58853/python-mcp)
 [![Contributors](https://img.shields.io/github/contributors/rb58853/python-mcp)](https://github.com/rb58853/python-mcp/graphs/contributors)
-[![Documentation][[docs-badge]](https://img.shields.io/badge/docs-modelcontextprotocol.io-blue.svg)][[docs-url](https://modelcontextprotocol.io)]
+[![Documentation](https://img.shields.io/badge/docs-modelcontextprotocol.io-blue.svg)](https://modelcontextprotocol.io)
 
 </div>
 
