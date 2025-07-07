@@ -27,45 +27,46 @@ A python implementation of the **Model Context Protocol (MCP)**....
 Este repositorio actúa como un **índice centralizado** que agrupa una serie de proyectos relacionados con el **Model Context Protocol (MCP)**, un estándar abierto para conectar aplicaciones de inteligencia artificial con fuentes externas de datos y herramientas.
 
 ---
-
 ## ¿Qué es MCP?
 
-El **Model Context Protocol (MCP)** es un protocolo abierto diseñado para estandarizar la forma en que las aplicaciones de IA, como chatbots, asistentes en IDEs o agentes personalizados, se conectan con sistemas externos, bases de datos y APIs. MCP funciona como un "USB para integraciones de IA", simplificando la conexión entre múltiples modelos de lenguaje y diversas herramientas o fuentes de datos.
+El **Model Context Protocol (MCP)** es un protocolo abierto y universal que estandariza la forma en que los grandes modelos de lenguaje (LLMs) y agentes de inteligencia artificial interactúan con fuentes de datos externas, herramientas y servicios en tiempo real. MCP permite que los modelos de IA accedan dinámicamente a información actualizada y ejecuten acciones externas, superando la limitación de operar de manera aislada sin conexión con sistemas externos[1][2][6].
 
-### Objetivos y Beneficios
+### Propósito
 
-- **Unificación de integraciones:** Evita la necesidad de construir integraciones M×N (modelos × herramientas) al transformar el problema en M+N, con MCP clientes (en las aplicaciones) y MCP servidores (en las fuentes de datos).
-- **Arquitectura cliente-servidor:** Los hosts (aplicaciones de usuario) se conectan a servidores MCP que exponen funciones, recursos y prompts mediante un protocolo estándar.
-- **Flexibilidad y escalabilidad:** Facilita cambiar entre proveedores de modelos y ampliar las capacidades sin rehacer integraciones.
-- **Seguridad y estandarización:** Usa JSON-RPC 2.0 para la comunicación y soporta transportes como STDIO y HTTP+SSE.
+MCP fue diseñado para resolver el problema de la fragmentación en la integración de IA con sistemas externos. Antes de MCP, cada aplicación de IA requería integraciones personalizadas para cada fuente de datos o herramienta, lo que generaba complejidad, redundancia y dificultades de mantenimiento. MCP establece un protocolo común que funciona como un "estándar universal" (similar a cómo USB unificó la conexión de dispositivos), facilitando una integración sencilla, escalable y segura entre modelos de lenguaje y recursos externos[2][6].
 
-### Componentes Principales
+### Componentes y Funcionalidades
 
-| Componente       | Descripción                                                                                  |
-|------------------|----------------------------------------------------------------------------------------------|
-| **Host**         | Aplicación que interactúa con el usuario y usa MCP para acceder a datos (ej. Claude Desktop) |
-| **Cliente MCP**  | Módulo dentro del host que gestiona la conexión con un servidor MCP específico               |
-| **Servidor MCP** | Programa externo que expone herramientas, recursos y prompts para el modelo                  |
-| **Transporte**   | Canales de comunicación (STDIO local o HTTP+SSE remoto)                                     |
+MCP define tres tipos principales de capacidades que los servidores pueden exponer a los modelos:
 
-### Casos de Uso
+- **Resources (Recursos):** Puntos de acceso para obtener datos estructurados, equivalentes a endpoints GET, que permiten cargar información relevante en el contexto del modelo (por ejemplo, bases de datos, documentos, APIs)[1][2].
 
-- Acceso a repositorios de código
-- Consultas a bases de datos
-- Integración con APIs externas (clima, gestión de tareas, etc.)
-- Automatización y asistentes inteligentes en entornos de desarrollo
+- **Tools (Herramientas):** Funciones o acciones que el modelo puede invocar para ejecutar código o realizar efectos secundarios, similares a endpoints POST (por ejemplo, enviar correos, ejecutar consultas, activar procesos)[1][2].
 
----
+- **Prompts (Plantillas):** Plantillas reutilizables que definen patrones de interacción con el modelo, estandarizando cómo se formulan y procesan las solicitudes[1].
 
-## Repositorios Incluidos
+### Arquitectura
 
-| Repositorio                         | Descripción breve                                           |
-|-----------------------------------|-------------------------------------------------------------|
-| [simple-mcp-server](https://github.com/rb58853/simple-mcp-server)       | Servidor MCP básico para pruebas y desarrollo rápido         |
-| [mcp-oauth](https://github.com/rb58853/mcp-oauth)                       | Implementación de autenticación OAuth para MCP               |
-| [mcp-llm-client](https://github.com/rb58853/mcp-llm-client)             | Cliente MCP para integración con modelos de lenguaje         |
-| [template_mcp_llm_client](https://github.com/rb58853/template_mcp_llm_client) | Plantilla para construir clientes MCP personalizados          |
-| [supabase-mcp-server](https://github.com/rb58853/supabase-mcp-server)   | Servidor MCP para integración con bases de datos Supabase    |
+MCP sigue una arquitectura cliente-servidor compuesta por:
 
----
+- **Hosts MCP:** Aplicaciones o interfaces que utilizan modelos de IA y desean acceder a datos o funcionalidades externas.
 
+- **Clientes MCP:** Clientes que mantienen conexiones individuales con servidores MCP para solicitar y recibir información.
+
+- **Servidores MCP:** Servicios que exponen recursos, herramientas y prompts a través del protocolo MCP.
+
+- **Fuentes de Datos Locales y Servicios Remotos:** Bases de datos, archivos, APIs o servicios externos que los servidores MCP pueden consultar o manipular.
+
+Esta arquitectura transforma el problema de integración de un esquema M×N (múltiples clientes por múltiples servidores) a una solución M+N, al introducir una capa de abstracción común que facilita la interoperabilidad[2][6].
+
+### Beneficios Clave
+
+- **Integración simplificada:** Reduce la necesidad de desarrollos personalizados para cada combinación de modelo y fuente de datos.
+
+- **Interoperabilidad:** Permite que cualquier cliente MCP funcione con cualquier servidor MCP compatible.
+
+- **Acceso en tiempo real:** Facilita que los modelos consulten datos actualizados y relevantes al momento de la interacción.
+
+- **Escalabilidad y mantenimiento:** Al estandarizar el protocolo, se facilita la expansión y actualización de sistemas sin afectar la compatibilidad.
+
+- **Seguridad y control:** Permite que las organizaciones mantengan control sobre sus datos sensibles, integrando IA local con sistemas empresariales de forma segura[1][6].
