@@ -22,16 +22,50 @@ A python implementation of the **Model Context Protocol (MCP)**....
 
 ---
 
-## Overview
+# MCP Ecosystem - Repositorios y Visión General
 
-TODO
+Este repositorio actúa como un **índice centralizado** que agrupa una serie de proyectos relacionados con el **Model Context Protocol (MCP)**, un estándar abierto para conectar aplicaciones de inteligencia artificial con fuentes externas de datos y herramientas.
 
-## Repositories
+---
 
-### Simple python mcp server
+## ¿Qué es MCP?
 
-TODO
+El **Model Context Protocol (MCP)** es un protocolo abierto diseñado para estandarizar la forma en que las aplicaciones de IA, como chatbots, asistentes en IDEs o agentes personalizados, se conectan con sistemas externos, bases de datos y APIs. MCP funciona como un "USB para integraciones de IA", simplificando la conexión entre múltiples modelos de lenguaje y diversas herramientas o fuentes de datos.
 
-## License
+### Objetivos y Beneficios
 
-MIT License. See [`license`](license).
+- **Unificación de integraciones:** Evita la necesidad de construir integraciones M×N (modelos × herramientas) al transformar el problema en M+N, con MCP clientes (en las aplicaciones) y MCP servidores (en las fuentes de datos).
+- **Arquitectura cliente-servidor:** Los hosts (aplicaciones de usuario) se conectan a servidores MCP que exponen funciones, recursos y prompts mediante un protocolo estándar.
+- **Flexibilidad y escalabilidad:** Facilita cambiar entre proveedores de modelos y ampliar las capacidades sin rehacer integraciones.
+- **Seguridad y estandarización:** Usa JSON-RPC 2.0 para la comunicación y soporta transportes como STDIO y HTTP+SSE.
+
+### Componentes Principales
+
+| Componente       | Descripción                                                                                  |
+|------------------|----------------------------------------------------------------------------------------------|
+| **Host**         | Aplicación que interactúa con el usuario y usa MCP para acceder a datos (ej. Claude Desktop) |
+| **Cliente MCP**  | Módulo dentro del host que gestiona la conexión con un servidor MCP específico               |
+| **Servidor MCP** | Programa externo que expone herramientas, recursos y prompts para el modelo                  |
+| **Transporte**   | Canales de comunicación (STDIO local o HTTP+SSE remoto)                                     |
+
+### Casos de Uso
+
+- Acceso a repositorios de código
+- Consultas a bases de datos
+- Integración con APIs externas (clima, gestión de tareas, etc.)
+- Automatización y asistentes inteligentes en entornos de desarrollo
+
+---
+
+## Repositorios Incluidos
+
+| Repositorio                         | Descripción breve                                           |
+|-----------------------------------|-------------------------------------------------------------|
+| [simple-mcp-server](https://github.com/rb58853/simple-mcp-server)       | Servidor MCP básico para pruebas y desarrollo rápido         |
+| [mcp-oauth](https://github.com/rb58853/mcp-oauth)                       | Implementación de autenticación OAuth para MCP               |
+| [mcp-llm-client](https://github.com/rb58853/mcp-llm-client)             | Cliente MCP para integración con modelos de lenguaje         |
+| [template_mcp_llm_client](https://github.com/rb58853/template_mcp_llm_client) | Plantilla para construir clientes MCP personalizados          |
+| [supabase-mcp-server](https://github.com/rb58853/supabase-mcp-server)   | Servidor MCP para integración con bases de datos Supabase    |
+
+---
+
