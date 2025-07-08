@@ -9,7 +9,7 @@
 
 </div>
 
-Este repositorio actúa como un **índice centralizado** que agrupa una serie de proyectos relacionados con el **Model Context Protocol (MCP)**, un estándar abierto para conectar aplicaciones de inteligencia artificial con fuentes externas de datos y herramientas
+This repository acts as a **centralized index** that groups together a series of projects related to the **Model Context Protocol (MCP)**, an open standard for connecting artificial intelligence applications with external data sources and tools.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ Este repositorio actúa como un **índice centralizado** que agrupa una serie de
   * [simple-mcp-server](#simple-mcp-server)
   * [template_mcp_llm_client](#template_mcp_llm_client)
   * [supabase-mcp-server](#supabase-mcp-server)
-* [¿Qué es MCP?](#qué-es-mcp)
+* [What is MCP?](#what-is-mcp)
 
 ## Overview
 
@@ -30,56 +30,84 @@ TODO
 
 ### [mcp-llm-client](https://github.com/rb58853/mcp-llm-client)
 
+Python client, based on [`mcp[cli]`](https://github.com/modelcontextprotocol/python-sdk), for connecting to MCP servers through multiple protocols, specifically designed to work with integrated language models.
+
+This package provides a Python interface to connect to MCP servers in an easy, intuitive, and configurable way. It offers a modular architecture that allows for easy extension of new transfer protocols and language models. Currently includes support for HTTPStream and GPT-4 mini, with expansion capability for more options in the future.
+
 ### [mcp-oauth](https://github.com/rb58853/mcp-oauth)
 
-### [simple-mcp-server](https://github.com/rb58853/)
+This repository constitutes an OAuth system in Python that implements both server and client, following an OAuth authentication flow that integrates in a standard way with `FastMCP`. As a base, it uses the OAuth system from the official repository [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples).
+
+This project represents a simple and extensible OAuth system in Python, integrated as much as possible with MCP standards and practices. Its goal is to facilitate the use of the OAuth system for MCP. It is integrated with the official MCP Python SDK (`"mcp[cli]"`), following the source code standard that provides the basis for the entire authorization system used and controlled by `FastMCP`.
+
+Both an OAuth server and client are implemented, respecting the most common standards to maintain standardization. It is important to highlight that the OAuth server standard in the MCP context is still poorly defined and with scarce documentation, so the greatest possible standardization has been sought both in the server and client code.
+
+This repository starts from the Antropic example in the [official repository](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples), modifying and restructuring the code to achieve optimal organization, facilitating practical and easy use when installing this repository as a pip package.
+
+### [simple-mcp-server](https://github.com/rb58853/simple-mcp-server)
+
+A Python implementation of the **Model Context Protocol (MCP)** server with `fastmcp` and `fastapi`.
+
+This repository is based on the official MCP Python SDK repository, with the objective of creating an MCP server in Python using FastMCP. The project incorporates the following basic functionalities:
+
+* To facilitate understanding and working with the Model Context Protocol (MCP), from the fundamentals and in an accessible manner
+* To provide a testing platform for MCP clients
+* To integrate the server with FastAPI and offer it as a streamable HTTP service, maintaining a clear separation between the service and the client
+
+The project focuses on the implementation of a simple MCP server that is served through FastAPI with httpstream. This approach represents the recommended methodology for creating MCP servers. To explore other implementation forms and server services, it is recommended to consult [the official documentation](https://github.com/modelcontextprotocol/python-sdk).
 
 ### [template_mcp_llm_client](https://github.com/rb58853/template_mcp_llm_client)
 
+Reference repository for evaluating and testing the [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) package. This template enables quick verification of client integration and functionality, as well as testing your own or third-party MCP servers. For detailed information about the MCP client with LLM integration, please refer to the [official repository](https://github.com/rb58853/mcp-llm-client).
+
+This project provides a minimal structure to test the [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) package and associated MCP servers. It allows for agile and reproducible validation of features, serving as a starting point for further development or additional integrations.
+
 ### [supabase-mcp-server](https://github.com/rb58853/supabase-mcp-server)
+
+TODO
 
 ---
 
-## ¿Qué es MCP?
+## What is MCP?
 
-El **Model Context Protocol (MCP)** es un protocolo abierto y universal que estandariza la forma en que los grandes modelos de lenguaje (LLMs) y agentes de inteligencia artificial interactúan con fuentes de datos externas, herramientas y servicios en tiempo real. MCP permite que los modelos de IA accedan dinámicamente a información actualizada y ejecuten acciones externas, superando la limitación de operar de manera aislada sin conexión con sistemas externos.
+The **Model Context Protocol (MCP)** is an open and universal protocol that standardizes how large language models (LLMs) and artificial intelligence agents interact with external data sources, tools, and services in real time. MCP enables AI models to dynamically access up-to-date information and execute external actions, overcoming the limitation of operating in isolation without connection to external systems.
 
-### Propósito
+### Purpose
 
-MCP fue diseñado para resolver el problema de la fragmentación en la integración de IA con sistemas externos. Antes de MCP, cada aplicación de IA requería integraciones personalizadas para cada fuente de datos o herramienta, lo que generaba complejidad, redundancia y dificultades de mantenimiento. MCP establece un protocolo común que funciona como un "estándar universal" (similar a cómo USB unificó la conexión de dispositivos), facilitando una integración sencilla, escalable y segura entre modelos de lenguaje y recursos externos.
+MCP was designed to solve the problem of fragmentation in AI integration with external systems. Before MCP, each AI application required custom integrations for each data source or tool, resulting in complexity, redundancy, and maintenance difficulties. MCP establishes a common protocol that works as a "universal standard" (similar to how USB unified device connections), enabling simple, scalable, and secure integration between language models and external resources.
 
-### Componentes y Funcionalidades
+### Components and Features
 
-MCP define tres tipos principales de capacidades que los servidores pueden exponer a los modelos:
+MCP defines three main types of capabilities that servers can expose to models:
 
-* **Resources (Recursos):** Puntos de acceso para obtener datos estructurados, equivalentes a endpoints GET, que permiten cargar información relevante en el contexto del modelo, por ejemplo, bases de datos, documentos, APIs.
+* **Resources:** Access points for obtaining structured data, equivalent to GET endpoints, allowing relevant information to be loaded into the model's context, e.g., databases, documents, APIs.
 
-* **Tools (Herramientas):** Funciones o acciones que el modelo puede invocar para ejecutar código o realizar efectos secundarios, similares a endpoints POST. Por ejemplo, enviar correos, ejecutar consultas, activar procesos.
+* **Tools:** Functions or actions that the model can invoke to execute code or perform side effects, similar to POST endpoints. For example, sending emails, running queries, triggering processes.
 
-* **Prompts (Plantillas):** Plantillas reutilizables que definen patrones de interacción con el modelo, estandarizando cómo se formulan y procesan las solicitudes.
+* **Prompts:** Reusable templates that define interaction patterns with the model, standardizing how requests are formulated and processed.
 
-### Arquitectura
+### Architecture
 
-MCP sigue una arquitectura cliente-servidor compuesta por:
+MCP follows a client-server architecture composed of:
 
-* **Hosts MCP:** Aplicaciones o interfaces que utilizan modelos de IA y desean acceder a datos o funcionalidades externas.
+* **MCP Hosts:** Applications or interfaces that use AI models and want to access external data or functionalities.
 
-* **Clientes MCP:** Clientes que mantienen conexiones individuales con servidores MCP para solicitar y recibir información.
+* **MCP Clients:** Clients that maintain individual connections with MCP servers to request and receive information.
 
-* **Servidores MCP:** Servicios que exponen recursos, herramientas y prompts a través del protocolo MCP.
+* **MCP Servers:** Services that expose resources, tools, and prompts through the MCP protocol.
 
-* **Fuentes de Datos Locales y Servicios Remotos:** Bases de datos, archivos, APIs o servicios externos que los servidores MCP pueden consultar o manipular.
+* **Local Data Sources and Remote Services:** Databases, files, APIs, or external services that MCP servers can query or manipulate.
 
-Esta arquitectura transforma el problema de integración de un esquema M×N (múltiples clientes por múltiples servidores) a una solución M+N, al introducir una capa de abstracción común que facilita la interoperabilidad.
+This architecture transforms the integration problem from an M×N scheme (multiple clients for multiple servers) to an M+N solution, by introducing a common abstraction layer that facilitates interoperability.
 
-### Beneficios Clave
+### Key Benefits
 
-* **Integración simplificada:** Reduce la necesidad de desarrollos personalizados para cada combinación de modelo y fuente de datos.
+* **Simplified integration:** Reduces the need for custom development for each combination of model and data source.
 
-* **Interoperabilidad:** Permite que cualquier cliente MCP funcione con cualquier servidor MCP compatible.
+* **Interoperability:** Allows any MCP client to work with any compatible MCP server.
 
-* **Acceso en tiempo real:** Facilita que los modelos consulten datos actualizados y relevantes al momento de la interacción.
+* **Real-time access:** Enables models to query up-to-date and relevant data at the moment of interaction.
 
-* **Escalabilidad y mantenimiento:** Al estandarizar el protocolo, se facilita la expansión y actualización de sistemas sin afectar la compatibilidad.
+* **Scalability and maintenance:** By standardizing the protocol, it facilitates the expansion and updating of systems without affecting compatibility.
 
-* **Seguridad y control:** Permite que las organizaciones mantengan control sobre sus datos sensibles, integrando IA local con sistemas empresariales de forma segura.
+* **Security and control:** Allows organizations to maintain control over their sensitive data, integrating local AI with enterprise systems securely.
