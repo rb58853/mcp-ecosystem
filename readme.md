@@ -2,11 +2,9 @@
 
 <div align=center>
 
-[![Last commit](https://img.shields.io/github/last-commit/rb58853/python-mcp.svg?style=flat)](https://github.com/rb58853/python-mcp/commits)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/rb58853/python-mcp)](https://github.com/rb58853/python-mcp/commits)
-[![Stars](https://img.shields.io/github/stars/rb58853/python-mcp?style=flat&logo=github)](https://github.com/rb58853/python-mcp/stargazers)
-[![Watchers](https://img.shields.io/github/watchers/rb58853/python-mcp?style=flat&logo=github)](https://github.com/rb58853/python-mcp)
-[![Contributors](https://img.shields.io/github/contributors/rb58853/python-mcp)](https://github.com/rb58853/python-mcp/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/rb58853/mcp-ecosystem?style=flat&logo=github)](https://github.com/rb58853/mcp-ecosystem/stargazers)
+[![Watchers](https://img.shields.io/github/watchers/rb58853/mcp-ecosystem?style=flat&logo=github)](https://github.com/rb58853/mcp-ecosystem)
+[![Contributors](https://img.shields.io/github/contributors/rb58853/mcp-ecosystem)](https://github.com/rb58853/mcp-ecosystem/graphs/contributors)
 [![Documentation](https://img.shields.io/badge/docs-modelcontextprotocol.io-blue.svg)](https://modelcontextprotocol.io)
 
 </div>
