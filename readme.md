@@ -17,13 +17,13 @@ This repository acts as a **centralized index** that groups together a series of
 * [Repositories](#repositories)
   * [mcp-llm-client](#mcp-llm-client)
   * [mcp-oauth](#mcp-oauth)
+  * [supabase-mcp-server](#supabase-mcp-server)
   * [simple-mcp-server](#simple-mcp-server)
   * [template_mcp_llm_client](#template_mcp_llm_client)
-  * [supabase-mcp-server](#supabase-mcp-server)
 * [What is MCP?](#what-is-mcp)
 
 ## Overview
- 
+
 TODO
 
 ## Repositories
@@ -44,6 +44,18 @@ Both an OAuth server and client are implemented, respecting the most common stan
 
 This repository starts from the Antropic example in the [official repository](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples), modifying and restructuring the code to achieve optimal organization, facilitating practical and easy use when installing this repository as a pip package.
 
+### [supabase-mcp-server](https://github.com/rb58853/supabase-mcp-server)
+
+This project constitutes an extension of the [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) repository. [Query MCP](https://github.com/alexander-zuev/supabase-mcp-server) is an open-source MCP server that enables integrated development environments (IDEs) to safely execute SQL queries, manage schema changes, access the Supabase Management API, and use the Auth Admin SDK—all with built-in security controls.
+
+The newly incorporated features include:
+
+* An authentication and authorization system based on OAuth2.
+* Implementation of the Streamable HTTP transport protocol.
+* Compatibility with self-hosted Supabase servers deployed via Docker, using the official [docker-compose](https://github.com/supabase/supabase/tree/master/docker) configuration provided by Supabase.
+
+These enhancements expand the original capabilities of the MCP server, enabling more secure and flexible integration with modern development environments and custom deployments.
+
 ### [simple-mcp-server](https://github.com/rb58853/simple-mcp-server)
 
 A Python implementation of the **Model Context Protocol (MCP)** server with `fastmcp` and `fastapi`.
@@ -61,10 +73,6 @@ The project focuses on the implementation of a simple MCP server that is served 
 Reference repository for evaluating and testing the [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) package. This template enables quick verification of client integration and functionality, as well as testing your own or third-party MCP servers. For detailed information about the MCP client with LLM integration, please refer to the [official repository](https://github.com/rb58853/mcp-llm-client).
 
 This project provides a minimal structure to test the [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) package and associated MCP servers. It allows for agile and reproducible validation of features, serving as a starting point for further development or additional integrations.
-
-### [supabase-mcp-server](https://github.com/rb58853/supabase-mcp-server)
-
-TODO
 
 ---
 
