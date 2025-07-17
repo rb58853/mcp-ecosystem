@@ -1,5 +1,4 @@
 # 🌐 MCP Ecosystem
-
 <div align="center">
 
 [![Stars](https://img.shields.io/github/stars/rb58853/mcp-ecosystem?style=flat&logo=github)](https://github.com/rb58853/mcp-ecosystem/stargazers)
@@ -9,8 +8,10 @@
 
 </div>
 
+![alt text](/images/dark.png)
 
 Welcome to the **MCP Ecosystem** — a centralized index gathering a suite of projects centered around the **Model Context Protocol (MCP)**, an open standard for connecting AI applications with external data sources and tools.
+
 
 
 ## 📑 Table of Contents
