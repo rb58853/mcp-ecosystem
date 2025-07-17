@@ -15,15 +15,18 @@ Welcome to the **MCP Ecosystem** — a centralized index gathering a suite of pr
 
 ## 📑 Table of Contents
 
-- [Ecosystem Overview](#ecosystem-overview)
-- [Featured Repositories](#featured-repositories)
-- [What is MCP?](#what-is-mcp)
-- [Core Concepts](#core-concepts)
-- [How MCP Works](#how-mcp-works)
-- [Key Benefits](#key-benefits)
+* [Overview](#ecosystem-overview)
+* [Featured Repositories](#featured-repositories)
+  * [mcp-llm-client](#mcp-llm-client)
+  * [mcp-oauth](#mcp-oauth)
+  * [supabase-mcp-server](#supabase-mcp-server)
+  * [simple-mcp-server](#simple-mcp-server)
+  * [template_mcp_llm_client](#template_mcp_llm_client)
+* [What is MCP?](#what-is-mcp)
 
 
-## 🧭 Ecosystem Overview
+
+## Ecosystem Overview
 
 The **MCP Ecosystem** acts as your one-stop hub for all things related to the Model Context Protocol. Whether you're building custom AI agents, deploying MCP servers, or testing new integrations, this collection streamlines development and fosters interoperability.
 
@@ -35,9 +38,9 @@ The **MCP Ecosystem** acts as your one-stop hub for all things related to the Mo
 > Ideal for bridging the gap between powerful AI models and the complex world of real data and services — enabling **scalable**, **secure**, and **future-proof** integrations!
 
 
-## 📦 Featured Repositories
+## Featured Repositories
 
-### [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) 🐍
+### [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client)
 Python client for connecting to MCP servers via multiple protocols, designed for LLM integration.
 - Modular, extensible architecture.
 - Supports HTTPStream and GPT-4 mini out of the box.
@@ -45,7 +48,7 @@ Python client for connecting to MCP servers via multiple protocols, designed for
 
 ---
 
-### [`mcp-oauth`](https://github.com/rb58853/mcp-oauth) 🔑
+### [`mcp-oauth`](https://github.com/rb58853/mcp-oauth)
 A simple yet extensible OAuth system in Python for MCP flows.
 - Implements both OAuth server and client, integrating with `FastMCP`.
 - Based on the authentication system in the [official MCP SDK](https://github.com/modelcontextprotocol/python-sdk/tree/main/examples).
@@ -53,7 +56,7 @@ A simple yet extensible OAuth system in Python for MCP flows.
 
 ---
 
-### [`supabase-mcp-server`](https://github.com/rb58853/supabase-mcp-server) 🛡️
+### [`supabase-mcp-server`](https://github.com/rb58853/supabase-mcp-server)
 Extends [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-server) with:
 - OAuth2-based authentication & authorization.
 - Streamable HTTP transport protocol.
@@ -61,24 +64,24 @@ Extends [supabase-mcp-server](https://github.com/alexander-zuev/supabase-mcp-ser
 
 ---
 
-### [`simple-mcp-server`](https://github.com/rb58853/simple-mcp-server) ⚡
+### [`simple-mcp-server`](https://github.com/rb58853/simple-mcp-server)
 A lightweight Python MCP server built using `fastmcp` and `fastapi`.
 - Reference implementation for learning and experimentation.
 - Great for testing client/server interactions and FastAPI-based HTTPStreaming.
 
 ---
 
-### [`template_mcp_llm_client`](https://github.com/rb58853/template_mcp_llm_client) 🧪
+### [`template_mcp_llm_client`](https://github.com/rb58853/template_mcp_llm_client)
 Minimal template for validating and testing [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client).
 - Quick client integration checks.
 - Useful for reproducible feature validation or starting new integrations.
 
 
-## ❓ What is MCP?
+## What is MCP?
 
 The **Model Context Protocol (MCP)** is an open, universal protocol **standardizing how LLMs and AI agents interact with external data sources, tools, and services in real time**. MCP empowers AI models to break free from isolation, allowing dynamic access to live information and the ability to execute real-world actions.
 
-![MCP Diagram](image.png)
+![MCP Diagram](images/image.png)
 
 
 ### 🧩 Why MCP?
