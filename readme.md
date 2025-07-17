@@ -11,6 +11,7 @@
 
 This repository acts as a **centralized index** that groups together a series of projects related to the **Model Context Protocol (MCP)**, an open standard for connecting artificial intelligence applications with external data sources and tools.
 
+
 ## Table of Contents
 
 * [Overview](#overview)
@@ -84,10 +85,11 @@ Reference repository for evaluating and testing the [`mcp-llm-client`](https://g
 
 This project provides a minimal structure to test the [`mcp-llm-client`](https://github.com/rb58853/mcp-llm-client) package and associated MCP servers. It allows for agile and reproducible validation of features, serving as a starting point for further development or additional integrations.
 
-
 ## What is MCP?
 
 The **Model Context Protocol (MCP)** is an open and universal protocol that standardizes how large language models (LLMs) and artificial intelligence agents interact with external data sources, tools, and services in real time. MCP enables AI models to dynamically access up-to-date information and execute external actions, overcoming the limitation of operating in isolation without connection to external systems.
+
+![alt text](image.png)
 
 ### Purpose
 
