@@ -70,6 +70,8 @@ By introducing a common abstraction layer, **MCP shifts the integration challeng
 * **Easy Scaling & Maintenance**: Standardized protocol facilitates expansion and updates.
 * **Security & Control**: Organizations integrate private data with secure, policy-driven access.
 
+---
+---
 
 ## Featured Repositories
 
